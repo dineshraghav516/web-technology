@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Practice - Dinesh Raghav</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f4f6f9;
+    }
+    h1 {
+      text-align: center;
+      color: #2575fc;
+    }
+    .box {
+      width: 200px;
+      height: 200px;
+      background: #6a11cb;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      background: #2575fc;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #6a11cb;
+    }
+  </style>
+</head>
+<body>
+  <h1>jQuery Practice </h1>
+
+  <div class="box"></div>
+
+  <div style="text-align:center;">
+    <button id="hideBtn">Hide</button>
+    <button id="showBtn">Show</button>
+    <button id="toggleBtn">Toggle</button>
+    <button id="colorBtn">Change Color</button>
+    <button id="animateBtn">Animate</button>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+       $("#hideBtn").click(function() {
+        $(".box").hide();
+      });
+
+       $("#showBtn").click(function() {
+        $(".box").show();
+      });
+
+       $("#toggleBtn").click(function() {
+        $(".box").toggle();
+      });
+
+       $("#colorBtn").click(function() {
+        $(".box").css("background", "orange");
+      });
+
+       $("#animateBtn").click(function() {
+        $(".box").animate({
+          width: "300px",
+          height: "300px",
+          opacity: 0.5
+        }, 1000).animate({
+          width: "200px",
+          height: "200px",
+          opacity: 1
+        }, 1000);
+      });
+
+       $(".box").hover(
+        function() { $(this).css("border", "5px solid red"); },
+        function() { $(this).css("border", "none"); }
+      );
+    });
+  </script>
+</body>
+</html>

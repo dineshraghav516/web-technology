@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Events & Methods </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f4f6f9;
+    }
+    h2 {
+      color: #333;
+      margin-top: 30px;
+    }
+    .example {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      background: #2575fc;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #6a11cb;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Events & Methods - Dinesh Raghav</h1>
+
+  <h2>🔹 Events</h2>
+  <div class="example">
+    <p><b>onclick</b> event:</p>
+    <button onclick="alert('Button Clicked!')">Click Me</button>
+  </div>
+
+  <div class="example">
+    <p><b>onmouseover</b> event:</p>
+    <p id="hoverText" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">
+      Hover over me to change my color!
+    </p>
+  </div>
+
+  <div class="example">
+    <p><b>onkeydown</b> event:</p>
+    <input type="text" onkeydown="showKey(event)" placeholder="Type something...">
+    <p id="keyOutput"></p>
+  </div>
+
+  <script>
+    function showKey(event) {
+      document.getElementById("keyOutput").innerText = "You pressed: " + event.key;
+    }
+  </script>
+
+  <h2>🔹 Common DOM Methods</h2>
+
+  <div class="example">
+    <p><b>document.getElementById()</b> method:</p>
+    <button onclick="changeText()">Change Text</button>
+    <p id="demoText">Original Text</p>
+  </div>
+
+  <div class="example">
+    <p><b>document.querySelector()</b> method:</p>
+    <button onclick="highlight()">Highlight Paragraph</button>
+    <p class="highlightable">This is a paragraph to highlight.</p>
+  </div>
+
+  <div class="example">
+    <p><b>addEventListener()</b> method:</p>
+    <button id="eventBtn">Click with Event Listener</button>
+    <p id="eventMsg"></p>
+  </div>
+
+  <script>
+    function changeText() {
+      document.getElementById("demoText").innerText = "Text Changed!";
+    }
+
+    function highlight() {
+      document.querySelector(".highlightable").style.background = "yellow";
+    }
+
+    document.getElementById("eventBtn").addEventListener("click", function() {
+      document.getElementById("eventMsg").innerText = "Button clicked using addEventListener!";
+    });
+  </script>
+</body>
+</html>

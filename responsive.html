@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f9;
+    }
+
+    header {
+      background: #2575fc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .box {
+      flex: 1;
+      margin: 10px;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    
+
+    
+    @media screen and (max-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+      .box {
+        background: #ffeaa7;
+      }
+      header {
+        font-size: 18px;
+      }
+    }
+
+v    @media print {
+      body {
+        background: white;
+      }
+      header, footer {
+        display: none;  
+      }
+      .box {
+        border: 1px solid black;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Responsive Webpage - Dinesh Raghav</h1>
+  </header>
+
+  <div class="container">
+    <div class="box">
+      <h2>Box 1</h2>
+      <p>This is the first section of content.</p>
+    </div>
+    <div class="box">
+      <h2>Box 2</h2>
+      <p>This is the second section of content.</p>
+    </div>
+    <div class="box">
+      <h2>Box 3</h2>
+      <p>This is the third section of content.</p>
+    </div>
+  </div>
+
+ 
+</body>
+</html>
